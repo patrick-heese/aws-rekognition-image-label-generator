@@ -91,22 +91,14 @@ aws-rekognition-image-label-generator/
 *Figure 3: Terminal output showing detected labels and confidence scores.*
 
 ## How to Use
-1. **Configure AWS CLI credentials** using `aws configure` and ensure your IAM user has the following managed policies:
-   - `AmazonS3FullAccess`
-   - `AmazonRekognitionFullAccess`
-
-2. **Deploy the infrastructure** using either the CloudFormation or Terraform instructions above.
-
-3. **Upload an image to S3**: Use the AWS CLI or AWS Management Console to upload your chosen image to the provisioned S3 bucket.
-
-4. **Update the script configuration**: Open `src/image_labeler.py` and set the `bucket` and `photo` variables to match your uploaded file.
-
-5. **Run the application**:
+1. **Deploy the infrastructure** using either the CloudFormation or Terraform instructions above.
+2. **Upload an image to S3**: Use the AWS CLI or AWS Management Console to upload your chosen image to the provisioned S3 bucket.
+3. **Update the script configuration**: Open `src/image_labeler.py` and set the `bucket` and `photo` variables to match your uploaded file.
+4. **Run the application**:
    ```bash
    python src/image_labeler.py
    ```
-
-6. **Review the results**:
+5. **Review the results**:
    - View detected labels and their confidence scores in the CLI output.
    - See the processed image with bounding boxes displayed.
 
