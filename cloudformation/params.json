@@ -1,0 +1,14 @@
+[
+  {
+    "ParameterKey": "BucketName",
+    "ParameterValue": "rekognition-test-bucket-5467"
+  },
+  {
+    "ParameterKey": "TagName",
+    "ParameterValue": "Rekognition Image Bucket"
+  },
+  {
+    "ParameterKey": "EnvironmentTag",
+    "ParameterValue": "Dev"
+  }
+]
