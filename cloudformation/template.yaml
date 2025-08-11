@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: >
+  AWS Rekognition Image Label Generator
+  - Creates an S3 bucket for storing images
+  - Parameterized values for flexibility
+
+Parameters:
+  BucketName:
+    Type: String
+    Description: S3 bucket name for storing images
+    MinLength: 3
+    MaxLength: 63
+    AllowedPattern: "^[a-z0-9.-]+$"
+    ConstraintDescription: Must be a valid S3 bucket name (lowercase, numbers, dots, hyphens).
+
+Resources:
+  ImageBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+
+Outputs:
+  BucketNameOutput:
+    Description: Name of the S3 bucket created
+    Value: !Ref BucketName
