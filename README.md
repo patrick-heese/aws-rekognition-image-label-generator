@@ -40,13 +40,9 @@ To provision the required AWS infrastructure, deploy using **CloudFormation** or
 ### **CloudFormation**
 1. Edit parameters in `params.json` to customize the deployment.
 
-2. Navigate to the `cloudformation` folder:
+2. Navigate to the `cloudformation` folder and deploy:
    ```bash
    cd cloudformation
-   ```
-   
-3. Deploy the stack using the AWS CLI, referencing the included parameter file:
-   ```bash
    aws cloudformation create-stack \
    --stack-name rekognition-stack \
    --template-body file://template.yaml \
