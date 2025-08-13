@@ -32,36 +32,43 @@ A Python-based application that leverages **Amazon Rekognition** to detect and l
 - **Other Tools:** AWS CLI
 
 ## Deployment Instructions
-To provision the required AWS infrastructure, deploy using **CloudFormation** or **Terraform** templates included in this repository.
+> **Note:** All command-line examples use `bash` syntax highlighting to maximize compatibility and readability.  
+> If you are using PowerShell or Command Prompt on Windows, the commands remain the same but prompt styles may differ.
 
-- **CloudFormation:**
-  Navigate to the `cloudformation` folder and deploy the stack using the AWS CLI, referencing the included parameter file.
-    
-  Example:  
-  ```bash
-  cd cloudformation
-  aws cloudformation create-stack \
-    --stack-name rekognition-stack \
-    --template-body file://template.yaml \
-    --parameters file://params.json \
-    --capabilities CAPABILITY_NAMED_IAM
-  ```
+To provision the required AWS infrastructure, deploy using **CloudFormation** or **Terraform** templates as included in this repository.
 
-- **Terraform:**
-  Navigate to the `terraform` folder, initialize Terraform, and apply the configuration.
-  
-  Example:
-  ```bash   
-  cd terraform
-  terraform init
-  terraform plan # Optional, but recommended.
-  terraform apply
-  ```
+### **CloudFormation**
+1. Edit parameters in `params.json` to customize the deployment.
 
-**Note**: Ensure the AWS CLI is configured (`aws configure`) with credentials that have sufficient permissions to create S3 buckets, Rekognition resources, and IAM roles.
+2. Navigate to the `cloudformation` folder:
+   ```bash
+   cd cloudformation
+   ```
+   
+3. Deploy the stack using the AWS CLI, referencing the included parameter file:
+   ```bash
+   aws cloudformation create-stack \
+   --stack-name rekognition-stack \
+   --template-body file://template.yaml \
+   --parameters file://params.json \
+   --capabilities CAPABILITY_NAMED_IAM
+   ```
+
+### **Terraform**
+1. Edit variables in `terraform.tfvars` and `variables.tf` to customize the deployment.
+
+2. Navigate to the `terraform` folder and deploy:
+   ```bash
+   cd terraform
+   terraform init
+   terraform plan # Optional, but recommended.
+   terraform apply
+   ```
+
+**Note:** Node.js 22.x or later with npm is required to deploy via CloudFormation/SAM. Ensure the AWS CLI is configured (`aws configure`) with credentials that have sufficient permissions to create **S3 buckets**, **deploy Lambda functions**, interact with **Amazon Polly**, and manage **IAM roles**.
 
 ## Project Structure
-```
+```plaintext
 aws-rekognition-image-label-generator/
 ├── assets/                      # Images, diagrams, screenshots
 │   ├── architecture-diagram.png      # Project architecture overview
@@ -73,6 +80,7 @@ aws-rekognition-image-label-generator/
 │   └── params.json                   # Parameter values for CloudFormation
 ├── terraform/                   # Terraform templates
 │   ├── main.tf                       # Main Terraform config
+│   ├── outputs.tf	             # Outputs definitions
 │   ├── variables.tf                  # Variables for Terraform config
 │   └── terraform.tfvars              # Sample Variable values for Terraform config
 ├── src/                         # Source code
@@ -114,6 +122,6 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 ### Author
-**Patrick**  
+**Patrick Heese**  
 Cloud Administrator | Aspiring Cloud Engineer/Architect  
-[LinkedIn Profile](link) | [GitHub Profile](link)
+[LinkedIn Profile](https://www.linkedin.com/in/patrick-heese/) | [GitHub Profile](https://github.com/patrick-heese)
