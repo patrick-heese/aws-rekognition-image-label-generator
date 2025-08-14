@@ -37,7 +37,7 @@ A Python-based application that leverages **Amazon Rekognition** to detect and l
 
 To provision the required AWS infrastructure, deploy using **CloudFormation** or **Terraform** templates as included in this repository.
 
-### **CloudFormation**
+### Option 1: **CloudFormation**
 1. Edit parameters in `params.json` to customize the deployment.
 
 2. Navigate to the `cloudformation` folder and deploy:
@@ -50,8 +50,8 @@ To provision the required AWS infrastructure, deploy using **CloudFormation** or
    --capabilities CAPABILITY_NAMED_IAM
    ```
 
-### **Terraform**
-1. Edit variables in `terraform.tfvars` and `variables.tf` to customize the deployment.
+### Option 2: **Terraform**
+1. Edit variables in `terraform.tfvars` and/or `variables.tf` to customize the deployment.
 
 2. Navigate to the `terraform` folder and deploy:
    ```bash
@@ -61,7 +61,7 @@ To provision the required AWS infrastructure, deploy using **CloudFormation** or
    terraform apply
    ```
 
-**Note:** Node.js 22.x or later with npm is required to deploy via CloudFormation/SAM. Ensure the AWS CLI is configured (`aws configure`) with credentials that have sufficient permissions to create **S3 buckets**, **deploy Lambda functions**, interact with **Amazon Polly**, and manage **IAM roles**.
+**Note**: Ensure the AWS CLI is configured (`aws configure`) with credentials that have sufficient permissions to create S3 buckets, Rekognition resources, and IAM roles.
 
 ## Project Structure
 ```plaintext
@@ -96,12 +96,16 @@ aws-rekognition-image-label-generator/
 
 ## How to Use
 1. **Deploy the infrastructure** using either the CloudFormation or Terraform instructions above.
+
 2. **Upload an image to S3**: Use the AWS CLI or AWS Management Console to upload your chosen image to the provisioned S3 bucket.
+
 3. **Update the script configuration**: Open `src/image_labeler.py` and set the `bucket` and `photo` variables to match your uploaded file.
+
 4. **Run the application**:
    ```bash
    python src/image_labeler.py
    ```
+   
 5. **Review the results**:
    - View detected labels and their confidence scores in the CLI output.
    - See the processed image with bounding boxes displayed.
