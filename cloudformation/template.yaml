@@ -13,11 +13,24 @@ Parameters:
     AllowedPattern: "^[a-z0-9.-]+$"
     ConstraintDescription: Must be a valid S3 bucket name (lowercase, numbers, dots, hyphens).
 
+  TagName:
+    Type: String
+    Description: Value for the 'Name' tag
+
+  EnvironmentTag:
+    Type: String
+    Description: Value for the 'Environment' tag
+
 Resources:
   ImageBucket:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: !Ref BucketName
+      Tags:
+        - Key: Name
+          Value: !Ref TagName
+        - Key: Environment
+          Value: !Ref EnvironmentTag
 
 Outputs:
   BucketNameOutput:
