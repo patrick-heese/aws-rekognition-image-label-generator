@@ -70,15 +70,17 @@ aws-rekognition-image-label-generator/
 │   ├── architecture-diagram.png      # Project architecture overview
 │   ├── sample-image.png              # Original image
 │   ├── sample-image-labeled.png      # Labeled output from Rekognition
-│   └── sample-terminalresults.png    # Sample CLI output
+│   └── sample-terminal-results.png   # Sample CLI output
 ├── cloudformation/              # AWS CloudFormation templates
-│   ├── template.yaml                 # Main template
+│   ├── template.yaml                 # Main CloudFormation template
 │   └── params.json                   # Parameter values for CloudFormation
 ├── terraform/                   # Terraform templates
-│   ├── main.tf                       # Main Terraform config
-│   ├── outputs.tf					  # Output definitions
-│   ├── variables.tf                  # Variable definitions
-│   └── terraform.tfvars              # Sample variable values
+│   ├── main.tf                       # Main SAM Terraform config
+│   ├── variables.tf                  # Input variables
+│   ├── outputs.tf					  # Exported values
+│   ├── terraform.tfvars              # Default variable values
+│   ├── providers.tf			      # AWS provider definition
+│   └── versions.tf					  # Terraform version constraint
 ├── src/                         # Source code
 │   └── image_labeler.py              # Python script
 ├── LICENSE                      
