@@ -76,14 +76,14 @@ aws-rekognition-image-label-generator/
 │   └── params.json                   # Parameter values for CloudFormation
 ├── terraform/                   # Terraform templates
 │   ├── main.tf                       # Main Terraform config
-│   ├── outputs.tf	             # Outputs definitions
+│   ├── outputs.tf	                  # Output definitions
 │   ├── variables.tf                  # Variables for Terraform config
-│   └── terraform.tfvars              # Sample Variable values for Terraform config
+│   └── terraform.tfvars              # Sample variable values for Terraform config
 ├── src/                         # Source code
 │   └── image_labeler.py              # Python script
-├── LICENSE                      # MIT License
-├── README.md                    # Project documentation
-└── .gitignore                   # Git ignored files
+├── LICENSE                      
+├── README.md                   
+└── .gitignore                 
 ```
 
 ## Screenshots
