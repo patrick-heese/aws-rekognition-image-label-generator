@@ -75,7 +75,7 @@ aws-rekognition-image-label-generator/
 │   ├── template.yaml                 # Main CloudFormation template
 │   └── params.json                   # Parameter values for CloudFormation
 ├── terraform/                   # Terraform templates
-│   ├── main.tf                       # Main SAM Terraform config
+│   ├── main.tf                       # Main Terraform config
 │   ├── variables.tf                  # Input variables
 │   ├── outputs.tf					  # Exported values
 │   ├── terraform.tfvars              # Default variable values
