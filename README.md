@@ -93,7 +93,7 @@ aws-rekognition-image-label-generator/
 
 *Figure 2: Sample output image with detected labels and bounding boxes.*
 
-![CLI Output](assets/sample-terminalresults.png)
+![CLI Output](assets/sample-terminal-results.png)
 *Figure 3: Terminal output showing detected labels and confidence scores.*
 
 ## How to Use
@@ -131,5 +131,5 @@ Cloud Administrator | Aspiring Cloud Engineer/Architect
 ## Acknowledgments
 This project was inspired by a course from [techwithlucy](https://github.com/techwithlucy).  
 The Python code is taken directly from the author's original implementation.  
-I designed and developed all Infrastructure-as-Code (CloudFormation, SAM, Terraform) and project documentation.  
 The architecture diagram included here is my own version, adapted from the original course diagram.  
+I designed and developed all Infrastructure-as-Code (CloudFormation, SAM, Terraform) and project documentation.  
