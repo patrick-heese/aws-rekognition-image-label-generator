@@ -26,7 +26,7 @@ A Python-based application that leverages **Amazon Rekognition** to detect and l
 - Infrastructure provisioning via **Terraform** and **AWS CloudFormation**.
 
 ## Tech Stack
-- **Languages:** Python
+- **Languages:** Python 3.13
 - **AWS Services:** Rekognition, S3, IAM
 - **IaC Tools:** CloudFormation, Terraform
 - **Other Tools:** AWS CLI
