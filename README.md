@@ -68,11 +68,11 @@ To provision the required AWS infrastructure, deploy using **CloudFormation** or
 
 2. **Upload an image to S3**: Use the AWS CLI or AWS Management Console to upload your chosen image to the provisioned S3 bucket.
 
-3. **Update the script configuration**: Open `src/image_labeler.py` and set the `bucket` and `photo` variables to match your uploaded file.
+3. **Update the script configuration**: Open `src/labeler_function/image_labeler.py` and set the `bucket` and `photo` variables to match your uploaded file.
 
 4. **Run the application**:
    ```bash
-   python src/image_labeler.py
+   python src/labeler_function/image_labeler.py
    ```
    
 5. **Review the results**:
@@ -82,23 +82,24 @@ To provision the required AWS infrastructure, deploy using **CloudFormation** or
 ## Project Structure
 ```plaintext
 aws-rekognition-image-label-generator/
-├── assets/                      # Images, diagrams, screenshots
-│   ├── architecture-diagram.png      # Project architecture overview
-│   ├── sample-image.png              # Original image
-│   ├── sample-image-labeled.png      # Labeled output from Rekognition
-│   └── sample-terminal-results.png   # Sample CLI output
-├── cloudformation/              # AWS CloudFormation templates
-│   ├── template.yaml                 # Main CloudFormation template
-│   └── params.json                   # Parameter values for CloudFormation
-├── terraform/                   # Terraform templates
-│   ├── main.tf                       # Main Terraform config
-│   ├── variables.tf                  # Input variables
-│   ├── outputs.tf					  # Exported values
-│   ├── terraform.tfvars              # Default variable values
-│   ├── providers.tf			      # AWS provider definition
-│   └── versions.tf					  # Terraform version constraint
-├── src/                         # Source code
-│   └── image_labeler.py              # Python script
+├── assets/                      	    # Images, diagrams, screenshots
+│   ├── architecture-diagram.png        # Project architecture overview
+│   ├── sample-image.png                # Original image
+│   ├── sample-image-labeled.png        # Labeled output from Rekognition
+│   └── sample-terminal-results.png     # Sample CLI output
+├── cloudformation/                     # AWS CloudFormation templates
+│   ├── template.yaml                   # Main CloudFormation template
+│   └── params.json                     # Parameter values for CloudFormation
+├── terraform/                          # Terraform templates
+│   ├── main.tf                         # Main Terraform config
+│   ├── variables.tf                    # Input variables
+│   ├── outputs.tf					    # Exported values
+│   ├── terraform.tfvars                # Default variable values
+│   ├── providers.tf			        # AWS provider definition
+│   └── versions.tf					    # Terraform version constraint
+├── src/                                # Source code
+│   └── labeler_function/               # Python script
+│   	└── image_labeler.py                
 ├── LICENSE                      
 ├── README.md                   
 └── .gitignore                 
